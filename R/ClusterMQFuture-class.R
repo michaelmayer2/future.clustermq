@@ -213,7 +213,7 @@ run.ClusterMQFuture <- local({
     if (is.null(workers)) {
       workers <- make_workers(n_jobs = 1L, debug = debug)
     } else if (is.numeric(workers)) {
-      workers <- make_workers(n_jobs = 1L, debug = debug)
+      workers <- make_workers(n_jobs = workers, debug = debug)
     }
     stop_if_not(inherits(workers, "QSys"))
 

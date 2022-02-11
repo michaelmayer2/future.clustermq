@@ -20,7 +20,7 @@
 #' @export
 clustermq <- function(expr, envir = parent.frame(), substitute = TRUE,
                      globals = TRUE, label = NULL,
-                     workers = getOption("future.clustermq.workers", availableCores()), ...) {
+                     workers = getOption("future.clustermq.workers", workers), ...) {
   if (substitute) expr <- substitute(expr)
 
   if (is.null(workers)) workers <- availableCores()
